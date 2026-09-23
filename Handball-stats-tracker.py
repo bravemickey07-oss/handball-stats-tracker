@@ -4,7 +4,6 @@ st.title("Handball Stats Tracker")
 
 playername = "Malek"
 
-# Use session state to keep track of matches and cumulative stats across clicks
 if "match_count" not in st.session_state:
     st.session_state.match_count = 0
     st.session_state.total_assists = 0
@@ -28,15 +27,15 @@ if submitted:
         
         shooting_pct = round((goals_scored / shots_taken) * 100)
         
-        st.write(f"**{playername}'s shooting percentage this match:** {shooting_pct}%")[cite: 5]
+        st.write(f"**{playername}'s shooting percentage this match:** {shooting_pct}%")
         
         if shooting_pct > 70:
-            st.success("Excellent work")[cite: 5]
+            st.success("Excellent work")
         else:
-            st.warning("You need to sharpen your aim")[cite: 5]
+            st.warning("You need to sharpen your aim")
             
-        st.info(f"{playername}'s match count is {st.session_state.match_count}")[cite: 5]
-        st.info(f"{playername}'s total assist count is {st.session_state.total_assists}")[cite: 5]
-        st.info(f"{playername}'s total turnovers count is {st.session_state.total_turnovers}")[cite: 5]
+        st.info(f"{playername}'s match count is {st.session_state.match_count}")
+        st.info(f"{playername}'s total assist count is {st.session_state.total_assists}")
+        st.info(f"{playername}'s total turnovers count is {st.session_state.total_turnovers}")
     else:
         st.error("Shots taken cannot be zero!")
